@@ -5,4 +5,7 @@ package io.zipcoder.pets;
  */
 public class RubiksCube {
 
+    public void speak(){
+
+    }
 }
