@@ -3,9 +3,13 @@ package io.zipcoder.pets;
 /**
  * Created by jaymilnamow on 5/18/16.
  */
-public class Cat {
+public class Cat extends Pet{
 
-    public void speak(){
+    public Cat(String name){
+        super(name);
+    }
 
+    public String speak(){
+        return "Meow";
     }
 }

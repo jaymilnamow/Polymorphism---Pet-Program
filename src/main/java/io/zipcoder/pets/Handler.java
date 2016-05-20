@@ -14,21 +14,26 @@ public class Handler {
 
     public int numPets;
     public String kindPets;
-    public String[] petsArray;
-    public String[] petsTypes;
+    public Pet[] petsArray;
 
     public void run() {
         numPets();
-        petsTypes = new String[numPets];
-        petsArray = new String[numPets];
+        petsArray = new Pet[numPets];
+        String petType;
 
         for(int i=0; i<numPets; i++) {
-            petsTypes[i] = kindPets();
-            petsArray[i] = namePets();
+            petType = kindPets();
+            if(petType.equals("cat")){
+                petsArray[i] = new Cat(namePets());
+            } else if(petType.equals("dog")) {
+                petsArray[i] = new Dog(namePets());
+            } else {
+                petsArray[i] = new RubiksCube(namePets());
+            }
         }
 
         for(int i=0; i<numPets; i++) {
-            System.out.println(petsArray[i] + " is a " + petsTypes[i]);
+            System.out.println(petsArray[i].getName() + " says " + petsArray[i].speak());
         }
 
     }
